@@ -10,5 +10,5 @@ Before you start contributing in this project please be sur that you have alread
 # Web Server 
 The web server is developed in NodeJS. The root folder is front-end. 
 Before launching the server, you have to run the following commands : 
-1. cd front-end 
-2. npm install 
+- cd front-end 
+- npm install 
