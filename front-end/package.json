@@ -1,0 +1,30 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "This application allow the user to retrive similar images to an example image. ",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-formidable": "^0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okba1/multimediaDBProject.git"
+  },
+  "keywords": [
+    "CBIR",
+    "images"
+  ],
+  "author": "Heni Ben Arab, Mehdi Fekih, Younes Outeha, Okba Khenissi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okba1/multimediaDBProject/issues"
+  },
+  "homepage": "https://github.com/okba1/multimediaDBProject#readme"
+}
