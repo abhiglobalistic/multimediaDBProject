@@ -16,3 +16,9 @@ Before launching the server, you have to run the following commands :
 - npm install 
 
 To launch the server you have to run : node server.js
+
+# Documents
+
+Oracle Developers Guide: https://docs.oracle.com/database/121/ADFNS/E41452-07.pdf
+Oracle Data Cartridge Developers Guide: https://docs.oracle.com/database/121/ADDCI/E15882-05.pdf
+Oracle Java Developers Guide: https://docs.oracle.com/database/121/JJDEV/E50793-03.pdf
