@@ -3,7 +3,7 @@ This project aims to implement a Content-Based-Image-Retrieval System
 
 # Requirements 
 Before you start contributing in this project please be sur that you have already the following tools.
-- Oracle Database Express Edition 11g Release 2: http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html
+- Oracle Database 12c Release 1: http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
 - SQL Developer: http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
 - LIRE: http://www.itec.uni-klu.ac.at/~mlux/lire-release/
 - Corel 10k Image Dataset: http://wang.ist.psu.edu/docs/related/
@@ -16,3 +16,11 @@ Before launching the server, you have to run the following commands :
 - npm install 
 
 To launch the server you have to run : node server.js
+
+# Documents
+
+Oracle Developers Guide: https://docs.oracle.com/database/121/ADFNS/E41452-07.pdf
+
+Oracle Data Cartridge Developers Guide: https://docs.oracle.com/database/121/ADDCI/E15882-05.pdf
+
+Oracle Java Developers Guide: https://docs.oracle.com/database/121/JJDEV/E50793-03.pdf
