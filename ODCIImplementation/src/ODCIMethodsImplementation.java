@@ -10,17 +10,21 @@ import oracle.CartridgeServices.*;
 import oracle.ODCI.ODCIEnv;
 import oracle.ODCI.ODCIIndexInfo;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
+import org.apache.lucene.document.Document;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.FSDirectory;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 
 
 public class ODCIMethodsImplementation {
     static GlobalDocumentBuilder globalDocumentBuilder;
-
+    static IndexWriter iw;
     public static int ODCIIndexCreate(ODCIIndexInfo ia, String params, ODCIEnv env) throws IOException {
         globalDocumentBuilder = new GlobalDocumentBuilder(CEDD.class);
         globalDocumentBuilder.addExtractor(FCTH.class);
@@ -35,4 +39,26 @@ public class ODCIMethodsImplementation {
 
         return 1;
     }
+    public static int ODCIIndexInsert(ODCIIndexInfo ia, String rid, String newval, ODCIEnv env){
+        try {
+            BufferedImage img = ImageIO.read(new FileInputStream(newval));
+            Document document = globalDocumentBuilder.createDocument(img, newval);
+            iw.addDocument(document);
+        }
+        catch (Exception e) {
+            System.err.println("Error reading image or indexing it.");
+            e.printStackTrace();
+        }
+        return 1;
+    }
+    public static int ODCIIndexUpdate(ODCIIndexInfo ia, String rid, String oldval, String newval, ODCIEnv env){
+
+        return 1;
+    }
+
+    public static int ODCIIndexDelete(ODCIIndexInfo ia, String rid, String oldval, ODCIEnv env){
+        return 1;
+    }
+
+//    public static int ODCIIndexStart()
 }
