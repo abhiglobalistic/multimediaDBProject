@@ -19,7 +19,7 @@
 --  END LOOP;
 --END;
 
-select count(*) from IMAGECOREL;
+--select count(id) from IMAGECOREL;
 
 --CREATE SEQUENCE idSequence
 --  START WITH 1
