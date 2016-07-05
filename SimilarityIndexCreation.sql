@@ -13,7 +13,7 @@ binding (bfile, bfile)
 return number using ImageSimilarity;
 
 -- Defining a type that implements the ODCIIndex interface
-create type SimilarityIndexMethods as object(
+create type SimilarityIndex as object(
     scanctx RAW(4),
     STATIC FUNCTION ODCIGetInterfaces(ifclist OUT SYS.ODCIObjectList)
     RETURN NUMBER,
@@ -42,8 +42,8 @@ create type SimilarityIndexMethods as object(
 );
 
 -- Defining the body of the methods
-create type body SimilarityIndexMethods is
-  (
+create type body SimilarityIndex
+is
   STATIC FUNCTION ODCIGetInterfaces(ifclist OUT SYS.ODCIObjectList)
   return number
   as language java name 
@@ -95,11 +95,11 @@ create type body SimilarityIndexMethods is
   return number
   as language java name
   'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexClose() return java.lang.Integer';
-  );
+end;
   
 -- Creating the Similarity indextype schema object
 create indextype SimilarityIndexType
 for Similarity(bfile)
-using SimilarityIndexMethods
+using SimilarityIndex
 with system managed storage tables;
 
