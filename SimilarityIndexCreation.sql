@@ -103,18 +103,3 @@ for Similarity(bfile)
 using SimilarityIndexMethods
 with system managed storage tables;
 
-
---create or replace function ODCIIndexCreate()
---return number
---as language java name 'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexCreate() return java.lang.Integer';
---/
---variable int output;
---call ODCIIndexCreate() into :output;
-
-
---CREATE OR REPLACE FUNCTION helloworld RETURN VARCHAR2 AS
---LANGUAGE JAVA NAME 'Hello.world () return java.lang.String';
---/
---variable myString VARCHAR2(20);
---
---CALL helloworld() INTO :myString;
