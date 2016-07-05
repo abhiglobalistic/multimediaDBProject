@@ -7,8 +7,7 @@ import net.semanticmetadata.lire.imageanalysis.features.global.AutoColorCorrelog
 import net.semanticmetadata.lire.imageanalysis.features.global.CEDD;
 import net.semanticmetadata.lire.imageanalysis.features.global.FCTH;
 import oracle.CartridgeServices.*;
-import oracle.ODCI.ODCIEnv;
-import oracle.ODCI.ODCIIndexInfo;
+import oracle.ODCI.*;
 import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.IndexWriter;
@@ -25,7 +24,7 @@ import java.nio.file.Paths;
 public class ODCIMethodsImplementation {
     static GlobalDocumentBuilder globalDocumentBuilder;
     static IndexWriter iw;
-    public static int ODCIIndexCreate(ODCIIndexInfo ia, String params, ODCIEnv env) throws IOException {
+    public static int ODCIIndexCreate (ODCIIndexInfo ia, String params, ODCIEnv env) throws IOException {
         globalDocumentBuilder = new GlobalDocumentBuilder(CEDD.class);
         globalDocumentBuilder.addExtractor(FCTH.class);
         globalDocumentBuilder.addExtractor(AutoColorCorrelogram.class);
@@ -35,11 +34,11 @@ public class ODCIMethodsImplementation {
         return 1;
     }
 
-    public static int ODCIIndexDrop(ODCIIndexInfo ia, ODCIEnv env){
+    public static int ODCIIndexDrop (ODCIIndexInfo ia, ODCIEnv env){
 
         return 1;
     }
-    public static int ODCIIndexInsert(ODCIIndexInfo ia, String rid, String newval, ODCIEnv env){
+    public static int ODCIIndexInsert (ODCIIndexInfo ia, String rid, String newval, ODCIEnv env){
         try {
             BufferedImage img = ImageIO.read(new FileInputStream(newval));
             Document document = globalDocumentBuilder.createDocument(img, newval);
@@ -51,14 +50,29 @@ public class ODCIMethodsImplementation {
         }
         return 1;
     }
-    public static int ODCIIndexUpdate(ODCIIndexInfo ia, String rid, String oldval, String newval, ODCIEnv env){
+    public static int ODCIIndexUpdate (ODCIIndexInfo ia, String rid, String oldval, String newval, ODCIEnv env){
 
         return 1;
     }
 
-    public static int ODCIIndexDelete(ODCIIndexInfo ia, String rid, String oldval, ODCIEnv env){
+    public static int ODCIIndexDelete (ODCIIndexInfo ia, String rid, String oldval, ODCIEnv env){
+
         return 1;
     }
 
-//    public static int ODCIIndexStart()
+    public static int ODCIIndexStart (int sctx, ODCIIndexInfo ia, ODCIPredInfo op, ODCIQueryInfo qi, int strt,
+                                     int stop, String cmpval, ODCIEnv env){
+
+        return 1;
+    }
+
+    public static int ODCIIndexFetch (int nrows, ODCIRidList rids, ODCIEnv env){
+
+        return 1;
+    }
+
+    public static int ODCIIndexClose (ODCIEnv env){
+
+        return 1;
+    }
 }
