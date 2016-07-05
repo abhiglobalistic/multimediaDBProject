@@ -4,7 +4,8 @@
 -- The function will call a LIRE-based JAVA code
 create function ImageSimilarity (reqImage in bfile, dbImage in bfile)
 return number as
-language java name 'blablabla';
+language java name
+'ODCIImplementation.ODCIOperatorImplementation.ImageSimilarity() return java.lang.Integer';
 
 -- Binding the operator to the functional implementation
 create operator Similiarity
@@ -46,13 +47,13 @@ create type body SimilarityIndexMethods is
   STATIC FUNCTION ODCIGetInterfaces(ifclist OUT SYS.ODCIObjectList)
   return number
   as language java name 
-  'ODCIIndexImplementation.ODCIGetInterfaces() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIGetInterfaces() return java.lang.Integer';
   
   static function ODCIIndexCreate(ia SYS.ODCIIndexInfo, parms VARCHAR2,
   env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexCreate() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexCreate() return java.lang.Integer';
 
   static function ODCIIndexDrop(ia SYS.ODCIIndexInfo, env SYS.ODCIEnv)
   return number
@@ -63,37 +64,37 @@ create type body SimilarityIndexMethods is
   newval VARCHAR2, env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexInsert() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexInsert() return java.lang.Integer';
   
   static function ODCIIndexUpdate(ia SYS.ODCIIndexInfo, rid VARCHAR2,
   oldval VARCHAR2, newval VARCHAR2, env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexUpdate() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexUpdate() return java.lang.Integer';
   
   static function ODCIIndexDelete(ia SYS.ODCIIndexInfo, rid VARCHAR2,
   oldval VARCHAR2, env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexDelete() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexDelete() return java.lang.Integer';
 
   static function ODCIIndexStart(sctx IN OUT psbtree_im, ia SYS.ODCIIndexInfo,
   op SYS.ODCIPredInfo, qi sys.ODCIQueryInfo, strt number, stop number,
   cmpval VARCHAR2, env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexStart() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexStart() return java.lang.Integer';
   
   member function ODCIIndexFetch(nrows NUMBER, rids OUT SYS.ODCIridlist,
   env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexFetch() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexFetch() return java.lang.Integer';
   
   member function ODCIIndexClose(env SYS.ODCIEnv)
   return number
   as language java name
-  'ODCIIndexImplementation.ODCIIndexClose() return java.lang.Integer';
+  'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexClose() return java.lang.Integer';
   );
   
 -- Creating the Similarity indextype schema object
@@ -105,7 +106,7 @@ with system managed storage tables;
 
 --create or replace function ODCIIndexCreate()
 --return number
---as language java name 'ODCIIndexImplementation.ODCIIndexCreate() return java.lang.Integer';
+--as language java name 'ODCIImplementation.ODCIMethodsImplementation.ODCIIndexCreate() return java.lang.Integer';
 --/
 --variable int output;
 --call ODCIIndexCreate() into :output;
