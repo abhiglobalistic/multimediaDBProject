@@ -1,3 +1,4 @@
+var request = require('request');
 module.exports = function(app) {
     app.post('/images', function(req, res){
         console.log(req.body);
@@ -17,5 +18,14 @@ module.exports = function(app) {
             images.push(image)
             res.json({'images':images});
         }
+    });
+
+    app.get('/test', function(req, res){
+        request.get('http://127.0.0.1:8080/createindex')
+        .on('response', function(response) {
+            console.log(response.statusCode) // 200
+            console.log(response.headers['content-type']) // 'image/png'
+
+        })
     });
 };

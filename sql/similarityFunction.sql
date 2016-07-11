@@ -1,0 +1,2 @@
+CREATE OR REPLACE FUNCTION ImageSimilarity(imOnePath in VARCHAR2, imTwoPath in VARCHAR2)
+RETURN VARCHAR2 AS language java name 'hello.Application.similarityFunction(java.lang.String, java.lang.String) return java.lang.Double';
